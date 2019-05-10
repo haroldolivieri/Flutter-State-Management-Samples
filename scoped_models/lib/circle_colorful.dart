@@ -9,21 +9,22 @@ import 'counter.dart';
 class CircleColorful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.only(top: 16),
-      width: 60,
-      height: 60,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(1.0),
-      ),
-      child: Center(
-          child: ScopedModelDescendant<CounterModel>(
-        builder: (context, _, model) => Text(
-              model.counter.toString(),
-              style: TextStyle(color: Colors.white, fontSize: 25),
+    return ScopedModelDescendant<CounterModel>(
+      builder: (context, _, model) => Container(
+            margin: EdgeInsets.only(top: 16),
+            width: 60,
+            height: 60,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: Color((math.Random().nextDouble() * 0xFFFFFF).toInt() << 0).withOpacity(1.0),
             ),
-      )),
+            child: Center(
+              child: Text(
+                model.counter.toString(),
+                style: TextStyle(color: Colors.white, fontSize: 25),
+              ),
+            ),
+          ),
     );
   }
 }
