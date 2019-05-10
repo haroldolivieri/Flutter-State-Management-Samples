@@ -7,3 +7,5 @@ A simple counter app with some child widgets receiveing the state in different w
 * [InheritedWidget](./inherited_widget)
 * [ScopedModels](./scoped_models)
 * [Provider](./provider)
+
+![State Management App](state_management_samples.gif)
